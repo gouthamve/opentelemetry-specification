@@ -1308,6 +1308,17 @@ This is a selection of the most relevant fields. See
 [for the full reference](https://www.elastic.co/guide/en/ecs/current/ecs-field-reference.html)
 for an exhaustive list.
 
+## Grafana Loki
+
+Loki has a very simple datastructure that is easy to map into the Unified Format.
+
+
+Field            | Type               | Description                                             | Maps to Unified Model Field
+-----------------|--------------------| ------------------------------------------------------- | ---------------------------
+timestamp        | Timestamp          | The time the event described by the log entry occurred. | Timestamp
+labels           | map<string,string> | A set of user-defined (key, value) data that describes a log-stream. | Attributes
+value            | string             | The log entry payload, represented as a Unicode string (UTF-8). | Body
+
 ## Appendix B: `SeverityNumber` example mappings
 
 |Syslog       |WinEvtLog  |Log4j |Zap   |java.util.logging|SeverityNumber|
